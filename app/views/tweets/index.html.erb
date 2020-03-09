@@ -1,0 +1,17 @@
+<h1> Twitter</h1>
+<p>
+	<%= link_to 'New Tweet', new_tweet_path %>
+</p>
+<p>
+	<th>Tweets</th>
+</p>
+<table>
+	<%= @tweets.each do |tweet| %>
+	<tr>
+		<td><%= tweet.content %></td>
+		<td><%= link_to 'Show', tweet_path(tweet) %></td>
+		<td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+		</tr>
+		<% end %>
+</table>
+
