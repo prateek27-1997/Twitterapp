@@ -32,7 +32,10 @@ gem 'jbuilder', '~> 2.5'
 #end
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'bulma', '~> 0.1.0'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -51,6 +54,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors', '~> 2.6'
+  gem 'guard', '~> 2.16', '>= 2.16.1'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
 end
 
 group :test do
