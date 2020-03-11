@@ -1,14 +1,16 @@
 class TweetsController < ApplicationController
+    before_action :authenticate_user!, except: [:index, :show]
+
 	def index
 		@tweets = Tweet.all
 	end
 
 	def new
-		@tweet = Tweet.new
+		@tweet = current_user.tweets.build
 	end
 
 	def create
-		@tweet = Tweet.new(tweet_params)
+		@tweet = current_user.tweets.build(tweet_params)
 		if @tweet.save
 			flash[:notice] = "Tweet was successfully saved"
 			redirect_to tweet_path(@tweet)
