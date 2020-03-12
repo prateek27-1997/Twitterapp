@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Pending Deliverables
+1. I can see my + followers tweet on dashboard. [Today]
+1. Send email on tweet to followers. [Today]
+1. I can follow, tweet. [Tommarrow]
+1. can see list of users. [Tommorrow]
