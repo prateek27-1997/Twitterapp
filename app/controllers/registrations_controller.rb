@@ -1,11 +1,11 @@
-class RegistrationsController < Devise::RegistrationsController
-	private
+#class RegistrationsController < Devise::RegistrationsController
+#	private
 
-	def sign_up_params
-		params.require(:user).permit(:email, :password, :password_confirmation)
-	end
+	#def sign_up_params
+	#	params.require(:user).permit(:email, :password, :password_confirmation)
+	#end
 
-	def sign_in_params
-		params.require(:user).permit(:email, :password, :password_confirmation, :current_password)
-	end
-end
+	#def sign_in_params
+	#	params.require(:user).permit(:email, :password, :password_confirmation, :current_password)
+	#end
+#end
