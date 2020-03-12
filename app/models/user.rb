@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # Read dependent options
   has_many :tweets, dependent: :destroy
+  has_many :relationships, class_name: "Relationship",  foreign_key: "follower_id"
+  has_many :relationships, class_name: "Relationship", foreign_key: "followed_id"
 end
