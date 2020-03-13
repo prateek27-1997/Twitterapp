@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
+
 	before_action :authenticate_user!, except: [:index, :show]
-	#before_action :new, :edit, :show, :update
+
     
     def index
 	  @tweets = Tweet.all
@@ -14,7 +15,7 @@ class TweetsController < ApplicationController
 	  @tweet = current_user.tweets.build(tweet_params)
 	    if @tweet.save
 			# 'Tweet was successfully saved' and I18n
-		  flash[:notice] = 'Tweet was successfully saved'
+		  flash[:success] = 'Tweet was successfully saved'
 		  redirect_to tweet_path(@tweet)
 		else
 		  render :new
@@ -32,7 +33,7 @@ class TweetsController < ApplicationController
 	def update
 	  @tweet = Tweet.find(params[:id])
 	    if @tweet.update(tweet_params)
-	      flash[:notice] = 'Tweet was successfully updated'
+	      flash[:success] = 'Tweet was successfully updated'
 		  redirect_to tweet_path(@tweet)
 		else
 		  render :edit
