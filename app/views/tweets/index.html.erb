@@ -2,17 +2,19 @@
 <% if user_signed_in? %>
 <%= render 'count' %>
 <%= render 'who-to-follow' %>
+<%= render 'profile' %>
 <% end %>
 <table>
   <% @tweets.each do |tweet| %>
     <tr>
       <td><%= tweet.content %></td>
-	  <td><%= link_to 'Show', tweet_path(tweet) %></td>
+    <td><%= link_to 'Show', tweet_path(tweet) %></td>
 	  <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
 	  <td><%= link_to 'Destroy', tweet_path(tweet),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
-	</tr>
+    
+  </tr>
    <% end %>
 </table>
 

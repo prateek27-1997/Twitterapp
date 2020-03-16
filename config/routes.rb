@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   resources :tweets 
   root 'tweets#index'
 	
+  resources :relationships
+  root 'relationships#create'
+  root 'relationships#destroy'
+  
+
 end
