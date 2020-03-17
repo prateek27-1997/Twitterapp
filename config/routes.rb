@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'tweets#index'
 	
   resources :relationships
-  root 'relationships#index'
+  root 'relationships#create'
+  root 'relationships#destroy'
+  
 
 end

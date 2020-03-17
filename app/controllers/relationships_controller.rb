@@ -1,26 +1,20 @@
 class RelationshipsController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    @relationship = Relationship.new
-  end
-	
   def create
-    @relationship = Relationship.new(relationship_params)
-    if @relationship.save
-    	redirect_to tweets_path(@tweet)
-    end
+    current_user.follow(@user)
+    redirect_to :back
   end
 
   def destroy
-    @user = Relationship.find(params[:id]).followed
-    current_user.unfollow!(@user)
-    redirect_to @user
+    curent_user.unfollow(@user)
+    redirect_to :back
   end
-
+  
   private
 
-  def relationship_params
-  	params.require(:relationship).permit(:follower_id, :followed_id)
+  def identify_user
+    @user = User.find_by(params[:id])
   end
+
 end
