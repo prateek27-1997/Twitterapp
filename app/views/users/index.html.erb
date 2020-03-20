@@ -1,0 +1,12 @@
+<h1>Listing Users</h1>
+<% @users.each do |user| %>
+<%= user.username %><br/>
+ <%= user.email %><br/>
+ <% if user == current_user %>
+ <%= link_to 'unfollow', relationship_path(user) %>
+ <% else %>
+ <%= link_to 'follow', relationships_path(user) %>
+ <% end %>
+ <% end %>
+ 
+ 

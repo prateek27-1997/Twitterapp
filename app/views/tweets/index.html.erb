@@ -18,13 +18,16 @@
 <% end %>
 </table>
 <table>
-  <th> List of Tweets </th>
+  <th>List of Tweets</th>
   <% @tweets.each do |tweet| %>
     <tr>
       <td><%= tweet.content %></td>
     </tr>
   <% end %>
 </table>
+<%= link_to 'Users', users_path %>
+
+
 
 
   
