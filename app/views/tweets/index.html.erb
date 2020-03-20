@@ -6,16 +6,30 @@
 <table>
   <% @tweets.each do |tweet| %>
   <tr>
+    <% if user_signed_in? && current_user.id == tweet.user_id %>
       <td><%= tweet.content %></td>
       <td><%= link_to 'Show', tweet_path(tweet) %></td>
      <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
      <td><%= link_to 'Destroy', tweet_path(tweet),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
-     <td><%= link_to 'follow', relationships_path(user_id: @user_id) %></td>
-     </tr>
-   <% end %>
+    <% end %>
+  </tr>
+<% end %>
 </table>
+<table>
+  <th> List of Tweets </th>
+  <% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet.content %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+  
+ 
+
 
 
 
