@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :tweets 
   root 'tweets#index'
 	
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, :only => [:create, :destroy]
 
  end

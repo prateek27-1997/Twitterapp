@@ -1,12 +1,14 @@
 <h1>Listing Users</h1>
 <% @users.each do |user| %>
+<p>
+<%= user.name %>
+</p>
+<p>
 <%= user.username %><br/>
- <%= user.email %><br/>
- <% if user == current_user %>
- <%= link_to 'unfollow', relationship_path(user) %>
- <% else %>
- <%= link_to 'follow', relationships_path(user) %>
- <% end %>
- <% end %>
- 
- 
+</p>
+<%= link_to "unFollow", relationship_path(:id => user.id), :method => :delete, :remote => 'true', :class => "FollowButton_small"%>
+<%= link_to 'follow', relationships_path(:id => user.id), :method => :post, :remote => 'true', :class => "FollowButton_small"%>
+<% end %>
+
+
+
